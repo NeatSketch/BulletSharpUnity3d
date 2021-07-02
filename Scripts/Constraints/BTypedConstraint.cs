@@ -277,7 +277,7 @@ namespace BulletUnity
             Vector3 xx = new Vector3(x.X, x.Y, x.Z);
             Vector3 yy = new Vector3(y.X, y.Y, y.Z);
             Vector3 zz = new Vector3(z.X, z.Y, z.Z);
-            Quaternion q = transform.rotation * Quaternion.Inverse(m_otherRigidBody.transform.rotation);
+            Quaternion q = Quaternion.Inverse(m_otherRigidBody.transform.rotation) * transform.rotation;
             xx = q * xx;
             yy = q * yy;
             zz = q * zz;
